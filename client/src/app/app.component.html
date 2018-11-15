@@ -1,0 +1,39 @@
+<div class="App">
+  <aside class="sidebar">
+    <section  *ngIf="!currentUser" class="join-chat">
+      <h2>Join Chat</h2>
+      <form (ngSubmit)="addUser()">
+        <input placeholder="Enter your username" type="text" name="username" [(ngModel)]="username" />
+      </form>
+    </section>
+    <section class="online-members">
+      <h2>Room Users</h2>
+      <ul class="user-list">
+        <li *ngFor="let user of users">
+          <span class="presence {{ user.presence.state }}"></span>
+          <span>{{ user.name }}</span>
+        </li>
+      </ul>
+    </section>
+  </aside>
+
+  <main class="chat-window">
+    <header class="chat-header">
+      <h1>Chat</h1>
+      <span class="participants"></span>
+    </header>
+    <section class="chat-session">
+      <ul class="message-list">
+        <li class="user-message" *ngFor="let message of messages">
+          <span class="user-id">{{ message.senderId }}</span>
+          <span>{{ message.text }}</span>
+        </li>
+      </ul>
+    </section>
+    <footer class="chat-footer">
+      <form (ngSubmit)='sendMessage()'>
+        <input placeholder="Type a message. Hit Enter to send" type="text" name="message" [(ngModel)]="message">
+      </form>
+    </footer>
+  </main>
+</div>
