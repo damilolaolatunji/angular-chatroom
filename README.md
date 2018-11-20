@@ -1,6 +1,6 @@
 # Angular 7 Chatroom
 
-Chatroom built with Angular 7 and Chatkit. Tutorial: 
+Chatroom built with Angular 7 and Chatkit. Tutorial: https://pusher.com/tutorials/chatroom-angular-chatkit
 
 ## Getting Started
 
